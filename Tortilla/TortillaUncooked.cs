@@ -9,7 +9,7 @@ using UnityEngine;
 
 namespace TortillaMod.Tortilla;
 
-public class TortillaUncooked : CustomItemGroup<TortillaUncooked.PotatoSoupPlainUncookedItemGroupView>
+public class TortillaUncooked : CustomItemGroup<TortillaUncooked.TortillaUncookedItemGroupView>
 {
     public override string UniqueNameID => "Tortilla Uncooked";
     public override GameObject Prefab => Mod.Bundle.LoadAsset<GameObject>("tortilla");
@@ -57,11 +57,11 @@ public class TortillaUncooked : CustomItemGroup<TortillaUncooked.PotatoSoupPlain
             itemGroupView.gameObject.transform.Find("Colour Blind").localPosition = new Vector3(0, 0.6f, 0);
         }
 
-        Prefab.GetComponent<PotatoSoupPlainUncookedItemGroupView>()?.Setup(Prefab);
+        Prefab.GetComponent<TortillaUncookedItemGroupView>()?.Setup(Prefab);
     }
 
 
-    public class PotatoSoupPlainUncookedItemGroupView : ItemGroupView
+    public class TortillaUncookedItemGroupView : ItemGroupView
     {
         internal void Setup(GameObject prefab)
         {
